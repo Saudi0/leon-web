@@ -14,6 +14,7 @@
     box-sizing: border-box;
     padding: 0; margin: 0;
     text-decoration: none; list-style: none;
+    /* font-family: 'Cairo', sans-serif; */
 }
 .container{
     padding-left: 15px;
@@ -210,12 +211,26 @@ header nav ul li a{
     display: flex;
     justify-content: space-between;
 }
+@media (max-width:685px){
+    .services .container{
+        flex-direction: column;
+    }
+}
 .services .container .col{
     margin-right: 10px;
 }
 .services .container .col .srv{
     display: flex;
     margin-bottom: 40px;
+}
+@media (max-width:769px){
+    .services .container .col .srv{
+        display: block;
+        text-align: center;
+    }
+    .services .container .col .srv i{
+        margin-bottom: 15px;
+    }
 }
 .services .container .col .srv i {
     color: var(--mine-color);
@@ -250,3 +265,29 @@ header nav ul li a{
     z-index: -1;
 }
 /* Services Sectoin End */
+/* Protfolio Sectoin Start */
+.protfolio{
+    padding-top: var(--padding-sectoin);
+    padding-bottom: var(--padding-sectoin);
+    background-color: #f6f6f6;
+}
+.protfolio .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.protfolio .container .card{
+    background-color: #fff;
+}
+.protfolio .container .card img{
+    width: 100%;
+}
+.protfolio .container .card .info{
+    padding: 10px;
+}
+.protfolio .container .card .info p{
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #777;
+}
+/* Protfolio Sectoin End */
