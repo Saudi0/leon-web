@@ -1,0 +1,252 @@
+/* Variables Starte */
+:root{
+    --mine-color:#10cab7;
+    --secondary-color: #2c4755 ;
+    --tran-time:0.3s ;
+    --padding-sectoin: 100px;
+}
+/* Variables End */
+
+/* Global Rules Starte*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0; margin: 0;
+    text-decoration: none; list-style: none;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Small */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Larde */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Tittel Sectoin Start */
+.container-tittel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.tittel-sectoin{
+    text-align: center;
+}
+.container-tittel .tittel-sectoin h2{
+    color: #bebebe;
+    font-size: 85px;
+    letter-spacing: -5px;
+    font-weight: 800;
+    margin: 0;
+}
+.container-tittel .tittel-sectoin p{
+    color: #777;
+    text-align: center;
+    font-size: 18px;
+    margin: -26px 0 0;
+}
+/* Tittel Sectoin End */
+/* Global Rules End*/
+/* Header Stert */
+header{
+    background-color: #fff;
+    min-height: 41px;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    width: 60px;
+}
+header .container nav{
+    padding: 10px ;
+    position: relative;
+}
+header .container nav:hover .icon span:nth-child(2){
+    width: 100%;
+}
+header .container nav:hover ul{
+    display: block;
+}
+header .container nav .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+header .container nav .icon span{
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+header .container nav .icon span:first-child{
+    margin-bottom: 5px;
+}
+header .container nav .icon span:nth-child(2){
+    width: 60%;
+    margin-bottom: 5px;
+    transition: var(--tran-time);
+}
+header nav ul{
+    display: none;
+    position: absolute;
+    right: 8px;
+    top: 110%;
+    background-color: #f6f6f6;
+    width: 200px;
+    z-index: 2;
+}
+header nav ul::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -20px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    border-width: 10px;
+}
+header nav ul li{
+    padding: 15px;
+    transition: var(--tran-time);
+}
+header nav ul li:not(:last-child){
+    border-bottom: 1px solid #eee;
+}
+header nav ul li:hover{
+    margin-left: 10px;
+}
+header nav ul li a{
+    color: black;
+}
+/* Header End */
+/* Landing Sectoin Start */
+.landing{
+    background: url(../imges/background.png) no-repeat;
+    background-position: center;
+    position: relative;
+    height: calc(100vh - 41px);
+}
+.landing .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+.landing .text h1{
+    color: var(--mine-color);
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.landing .text p{
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* Landing Sectoin End */
+/* Features Sectoin Start */
+.features{
+    background-color: #f6f6f6;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.features .container{
+    /*  لا يمكنني جعل card قابل للزياده والنقصان حسب المساحه فقمت باستخدام ال grid */
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    gap: 30px;
+}
+.features .container .card{
+    padding: 15px;
+    /* width: 310px; */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.features .container .card i{
+    color: var(--mine-color);
+    margin-bottom: 15px;
+}
+.features .container .card h2{
+    font-weight: 800;
+    margin: 15px 0;
+}
+.features .container .card p{
+    color: #777;
+    line-height: 1.6;
+    font-size: 17px;
+} 
+/* Features Sectoin End */
+/* Services Sectoin Start */
+.services{
+    padding-top: var(--padding-sectoin);
+    padding-bottom: var(--padding-sectoin);
+}
+.services .container{
+    display: flex;
+    justify-content: space-between;
+}
+.services .container .col{
+    margin-right: 10px;
+}
+.services .container .col .srv{
+    display: flex;
+    margin-bottom: 40px;
+}
+.services .container .col .srv i {
+    color: var(--mine-color);
+    margin-right: 15px;
+}
+.services .container .col .srv p{
+    margin-top: 10px;
+    color: #777;
+    line-height: 1.6;
+    font-weight: 600;
+}
+.services .container .col img{
+    max-width: 100%;
+}
+.services .container .col .imge{
+    position: relative;
+    width: 225px;
+}
+@media (max-width:1115px){
+    .services .container .col .imge{
+        display: none;
+    }
+}
+.services .container .col .imge::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: calc(99% + 40px);
+    background-color: var(--secondary-color);
+    right: -25px;
+    top: -20px;
+    z-index: -1;
+}
+/* Services Sectoin End */
