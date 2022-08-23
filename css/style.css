@@ -14,6 +14,7 @@
     box-sizing: border-box;
     padding: 0; margin: 0;
     text-decoration: none; list-style: none;
+    scroll-behavior: smooth;
     /* font-family: 'Cairo', sans-serif; */
 }
 .container{
@@ -126,7 +127,6 @@ header nav ul::before{
     border-width: 10px;
 }
 header nav ul li{
-    padding: 15px;
     transition: var(--tran-time);
 }
 header nav ul li:not(:last-child){
@@ -137,6 +137,8 @@ header nav ul li:hover{
 }
 header nav ul li a{
     color: black;
+    padding: 15px;
+    display: block;
 }
 /* Header End */
 /* Landing Sectoin Start */
