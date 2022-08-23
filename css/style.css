@@ -3,7 +3,7 @@
     --mine-color:#10cab7;
     --secondary-color: #2c4755 ;
     --tran-time:0.3s ;
-    --padding-sectoin: 100px;
+    --padding-sectoin: 60px;
 }
 /* Variables End */
 
@@ -189,6 +189,11 @@ header nav ul li a{
     /* width: 310px; */
     margin-bottom: 20px;
     text-align: center;
+    transition: var(--tran-time);
+}
+.features .container .card:hover{
+    transform: scale(1.1);
+    border: 1px solid #ddd;
 }
 .features .container .card i{
     color: var(--mine-color);
@@ -280,6 +285,13 @@ header nav ul li a{
 }
 .protfolio .container .card{
     background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 9px -6px 20px 0px #7c7575;
+    transition: var(--tran-time);
+}
+.protfolio .container .card:hover{
+    transform: scale(1.1);
 }
 .protfolio .container .card img{
     width: 100%;
@@ -293,3 +305,125 @@ header nav ul li a{
     color: #777;
 }
 /* Protfolio Sectoin End */
+/* About Sectoin Start */
+.about{
+    padding-top: var(--padding-sectoin);
+    padding-bottom: var(--padding-sectoin);
+}
+.about .container{
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width:993px){
+    .about .container{ 
+    flex-direction: column;
+    align-items: center;
+    }
+}
+.about .container .imge{
+    width: 250px;
+    margin-bottom: 60px;
+    position: relative;
+}
+.about .container .imge::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 60%;
+    background-color: transparent;
+    border-bottom: 51px solid cornflowerblue;
+    border-left: 50px solid cornflowerblue;
+    top: -15px;
+    right: -131px;
+    z-index: -1;
+}
+.about .container .imge::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -30px;
+    background-color: cornflowerblue;
+    z-index: -1;
+}
+@media (max-width:993px){
+    .about .container .imge::after,
+    .about .container .imge::before{
+        display: none;
+    }
+}
+.about .container .imge img{
+    max-width: 100%;
+}
+.about .container .text{
+    flex-basis: calc(100% - 500px );
+    align-self: center;
+}
+.about .container .text p:first-child{
+    font-weight: bold;
+    line-height: 1.6;
+}
+.about .container .text hr{
+    margin: 40px 0;
+    width: 50%;
+    border-color: cornflowerblue;
+}
+.about .container .text p:last-child{
+    color: #777;
+    line-height: 1.6;
+}
+/* About Sectoin End */
+/* Contact Sectoin Start */
+.contact{
+    padding-top: var(--padding-sectoin);
+    padding-bottom: var(--padding-sectoin);
+    background-color: #f6f6f6;
+}
+.contact .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact .container .info .par-1{
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.contact .container .info a{
+    font-size: 29px;
+    display: block;
+    margin-bottom: 15px;
+    margin-left: 33px;
+    color: cornflowerblue;
+}
+.contact .container .info .social{
+    display: flex;
+}
+.contact .container .info .social p{
+    font-size: 19px;
+}
+.contact .container .info .social i{
+    margin-left: 9px;
+    margin-top: 1px;
+    font-size: 20px;
+    color: var(--secondary-color);
+}
+/* Contact Sectoin End */
+/* Footer Start */
+footer{
+    background-color: var(--secondary-color);
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p{
+    font-size: 20px;
+}
+footer p a {
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+}
+/* Footer End */
